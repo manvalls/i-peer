@@ -1,1 +1,1 @@
-exports.ws = ws;
+exports.ws = require('./ws.js');
