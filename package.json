@@ -1,0 +1,21 @@
+{
+  "name": "i-peer",
+  "version": "0.0.0",
+  "description": "Implementations of the Peer interface",
+  "main": "main.js",
+  "dependencies": {
+    "y-emitter": "",
+    "u-proto": "",
+    "ws": ""
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/manvalls/i-peer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manvalls/i-peer/issues"
+  },
+  "author": "Manuel Valls Fernández <manolo@vlrz.es>",
+  "license": "LGPL-3.0"
+}
