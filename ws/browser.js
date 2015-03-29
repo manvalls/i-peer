@@ -7,7 +7,8 @@ module.exports = function getPeer(url){
   var inP,outP,ws;
   
   if(!url.match(/^wss?:/)){
-    url = document.baseURI.replace(/^http/,'ws') + url;
+    if(url.charAt(0) == '/') url = location.origin.replace(/^http/,'ws') + url + '/';
+    else url = document.baseURI.replace(/^http/,'ws') + url + '/';
   }
   
   ws = new WebSocket(url);
