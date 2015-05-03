@@ -1,6 +1,6 @@
 {
   "name": "i-peer",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "Implementations of the Peer interface",
   "main": "main.js",
   "dependencies": {
