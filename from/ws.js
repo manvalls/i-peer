@@ -13,6 +13,7 @@ module.exports = function(ws){
       
     case 1:
       inP.set('ready');
+      ws[once]('close',onceClosed,inP);
       break;
       
     case 3:
@@ -29,7 +30,7 @@ module.exports = function(ws){
   ws[on]('message',onMsg,inP);
   
   outP.target.on('msg',sendMsg,ws);
-  outP.target.once('closed',close,ws);
+  outP.target.once('closed',close,ws,inP);
   
   return outP;
 }
@@ -46,18 +47,19 @@ function onceClosed(e,en,inP){
 function onMsg(e,en,inP){
   var msg = e.data || e[0];
   
-  msg = JSON.parse(msg);
-  inP.give('msg',msg);
+  try{
+    msg = JSON.parse(msg);
+    inP.give('msg',msg);
+  }catch(e){ }
+  
 }
 
 function sendMsg(msg,en,ws){
-  ws.send(JSON.stringify(msg));
+  if(ws.readyState == 1) ws.send(JSON.stringify(msg));
 }
 
-function close(e,en,ws){
+function close(e,en,ws,inP){
   ws.close();
-  
-  this.unset('ready');
-  this.set('closed');
+  onceClosed(e,en,inP);
 }
 
