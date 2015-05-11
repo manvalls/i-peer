@@ -31,10 +31,10 @@ function onceClosed(e,c,inP){
 }
 
 function onMsg(e,c,inP){
-  var msg;
+  var msg = e[0].utf8Data;
   
   try{
-    msg = JSON.parse(e.utf8Data);
+    msg = JSON.parse(msg);
     inP.give('msg',msg);
   }catch(e){ }
   
