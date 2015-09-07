@@ -5,7 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "y-emitter": "",
-    "u-proto": "",
+    "u-proto": "^3",
     "ws": ""
   },
   "repository": {
