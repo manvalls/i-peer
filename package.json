@@ -4,9 +4,9 @@
   "description": "Implementations of the Peer interface",
   "main": "main.js",
   "dependencies": {
-    "y-emitter": "",
-    "u-proto": "^3",
-    "ws": ""
+    "u-proto": "^3.7.0",
+    "ws": "^0.8.0",
+    "y-emitter": "^8.0.1"
   },
   "repository": {
     "type": "git",
